@@ -1,0 +1,1 @@
+Post Interview, I did some reflection and decided that I want to build a fullstack project for the stock tracker. When I previously created this project, I did the bare basic front end aspect, with little backend implementation. I realize starting again wil be hugely beneficial for me to learn.

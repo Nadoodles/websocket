@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Stock Tracker</title>
+</head>
+<body>
+  <h1>Stock Tracker</h1>
+  <div id="stock">AAPL: <span id="price">Loading...</span></div>
+
+  <script>
+    const ws = new WebSocket("ws://localhost:3000");
+
+    ws.onmessage = (event) => {
+      const data = JSON.parse(event.data);
+      if (data.symbol === "AAPL") {
+        document.getElementById("price").textContent = `$${parseFloat(data.price).toFixed(2)}`;
+      }
+    };
+  </script>
+</body>
+</html>
