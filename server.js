@@ -32,23 +32,22 @@ wss.on("connection", (ws) => {
 // Poll stock data every 30 seconds and broadcast
 setInterval(async () => {
   try {
-    const response = await axios.get(
-      `https://www.alphavantage.co/query`,
-      {
+    const response = await axios.get(`https://www.alphavantage.co/query`, {
         params: {
-          function: "GLOBAL_QUOTE",
-          symbol: "AAPL",
-          apikey: process.env.ALPHA_VANTAGE_API_KEY,
+            function: "GLOBAL_QUOTE",
+            symbol: "AAPL", // or any other stock symbol
+            apikey: process.env.ALPHA_VANTAGE_API_KEY,
         },
-      }
-    );
+    });
+
+console.log(JSON.stringify(response.data, null, 2));
 
     const price = response.data["Global Quote"]["05. price"];
     broadcast({ symbol: "AAPL", price });
   } catch (err) {
     console.error("API Error:", err.message);
   }
-}, 30000); // 30 seconds
+}, 3600000); // 1 hour
 
 server.listen(PORT, () => {
   console.log(`Server listening on http://localhost:${PORT}`);
