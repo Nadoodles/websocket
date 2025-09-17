@@ -363,3 +363,13 @@ WebSocket HANDSHAKING /ws/stocks/ [192.168.65.1:48661]
 WebSocket CONNECT /ws/stocks/ [192.168.65.1:48661]
 WebSocket HANDSHAKING /ws/stocks/ [192.168.65.1:41328]
 WebSocket CONNECT /ws/stocks/ [192.168.65.1:41328]
+Not Found: /
+HTTP GET / 404 [0.03, 192.168.65.1:61556]
+Not Found: /favicon.ico
+HTTP GET /favicon.ico 404 [0.01, 192.168.65.1:61556]
+WebSocket DISCONNECT /ws/stocks/ [192.168.65.1:41328]
+WebSocket DISCONNECT /ws/stocks/ [192.168.65.1:48661]
+WebSocket HANDSHAKING /ws/stocks/ [192.168.65.1:49526]
+WebSocket CONNECT /ws/stocks/ [192.168.65.1:49526]
+WebSocket HANDSHAKING /ws/stocks/ [192.168.65.1:40006]
+WebSocket CONNECT /ws/stocks/ [192.168.65.1:40006]
